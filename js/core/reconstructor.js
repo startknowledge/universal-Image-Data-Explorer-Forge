@@ -6,14 +6,14 @@ export class Reconstructor {
     switch(format) {
       case 'binary':
         const bits = data.replace(/\s/g, '');
-        if (bits.length !== expectedLen * 8) throw new Error(`Binary length mismatch: expected ${expectedLen*8} bits, got ${bits.length}`);
+        if (bits.length !== expectedLen * 8) throw new Error(`Binary length mismatch: expected ${expectedLen*8} bits`);
         for (let i=0; i<expectedLen; i++) {
           bytes.push(parseInt(bits.substr(i*8, 8), 2));
         }
         break;
       case 'hex':
         const hexVals = data.trim().split(/\s+/);
-        if (hexVals.length !== expectedLen) throw new Error(`Hex count mismatch: expected ${expectedLen}, got ${hexVals.length}`);
+        if (hexVals.length !== expectedLen) throw new Error(`Hex count mismatch: expected ${expectedLen}`);
         bytes = hexVals.map(h => parseInt(h, 16));
         break;
       case 'base64':
@@ -43,10 +43,12 @@ export class Reconstructor {
         else throw new Error('JSON must be an array');
         break;
       default:
-        throw new Error('Unsupported revert format');
+        throw new Error(`Unsupported revert format: ${format}`);
     }
 
-    if (bytes.length !== expectedLen) throw new Error(`Data length ${bytes.length} != ${expectedLen} pixels`);
+    if (bytes.length !== expectedLen) {
+      throw new Error(`Data length ${bytes.length} != ${expectedLen} pixels`);
+    }
     return new Uint8Array(bytes);
   }
 

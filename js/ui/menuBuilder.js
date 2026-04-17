@@ -45,7 +45,7 @@ export class MenuBuilder {
         header.classList.toggle('collapsed');
       });
       
-      // ✅ Ensure all groups start expanded (no 'collapsed' class)
+      // All groups start expanded
       itemsDiv.classList.remove('collapsed');
       header.classList.remove('collapsed');
       

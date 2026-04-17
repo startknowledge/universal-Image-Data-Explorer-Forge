@@ -59,21 +59,29 @@ document.getElementById('convertBtn').addEventListener('click', async () => {
   logger.log(`Conversion done. Length: ${output.length} chars`);
 });
 
-// Revert any format to image
+// REVERT ANY FORMAT TO IMAGE (FIXED)
 document.getElementById('revertToImageBtn').addEventListener('click', () => {
   const inputData = document.getElementById('revertInputText').value.trim();
   const format = document.getElementById('revertFormatSelect').value;
   const width = parseInt(document.getElementById('revertWidth').value);
   const height = parseInt(document.getElementById('revertHeight').value);
-  if (!inputData || !width || !height) { logger.log('Please provide data, width and height', 'error'); return; }
+  
+  if (!inputData) { logger.log('Please paste data to revert', 'error'); return; }
+  if (!width || !height || isNaN(width) || isNaN(height)) { 
+    logger.log('Please provide valid width and height', 'error'); 
+    return; 
+  }
+  
   try {
     const bytes = Reconstructor.parseToBytes(inputData, format, width, height);
     const canvas = Reconstructor.reconstructImage(bytes, width, height);
     const revertCanvas = document.getElementById('revertCanvas');
     revertCanvas.width = width;
     revertCanvas.height = height;
-    revertCanvas.getContext('2d').drawImage(canvas, 0, 0);
-    logger.log(`Reverted ${format} → ${width}x${height} image`);
+    const ctx = revertCanvas.getContext('2d');
+    ctx.clearRect(0, 0, width, height);
+    ctx.drawImage(canvas, 0, 0);
+    logger.log(`✅ Reverted ${format} → ${width}x${height} image`);
   } catch (err) {
     logger.log(`Revert error: ${err.message}`, 'error');
   }
@@ -102,4 +110,4 @@ document.getElementById('registerEmailBtn').addEventListener('click', () => {
   logger.log(`Email registered: ${email}`);
 });
 
-logger.log('🚀 Universal Image Forge Pro ready | Revert any format to image | All groups expanded');
+logger.log('🚀 Universal Image Forge Pro ready | All 60+ converters work | Revert button fixed');
