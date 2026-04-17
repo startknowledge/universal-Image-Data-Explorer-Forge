@@ -6,19 +6,19 @@ export class Reconstructor {
     switch(format) {
       case 'binary':
         const bits = data.replace(/\s/g, '');
-        if (bits.length !== expectedLen * 8) throw new Error(`Binary length mismatch: expected ${expectedLen*8} bits`);
+        if (bits.length !== expectedLen * 8) throw new Error(`Binary length mismatch: expected ${expectedLen*8} bits, got ${bits.length}`);
         for (let i=0; i<expectedLen; i++) {
           bytes.push(parseInt(bits.substr(i*8, 8), 2));
         }
         break;
       case 'hex':
         const hexVals = data.trim().split(/\s+/);
-        if (hexVals.length !== expectedLen) throw new Error(`Hex count mismatch: expected ${expectedLen}`);
+        if (hexVals.length !== expectedLen) throw new Error(`Hex count mismatch: expected ${expectedLen}, got ${hexVals.length}`);
         bytes = hexVals.map(h => parseInt(h, 16));
         break;
       case 'base64':
         const binaryStr = atob(data);
-        for (let i=0; i<binaryStr.length && bytes.length<expectedLen; i++) {
+        for (let i=0; i<binaryStr.length && bytes.length < expectedLen; i++) {
           bytes.push(binaryStr.charCodeAt(i));
         }
         break;

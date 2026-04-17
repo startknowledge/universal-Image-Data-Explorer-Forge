@@ -50,14 +50,16 @@ document.getElementById('convertBtn').addEventListener('click', async () => {
   logger.log(`Converting to ${currentConverterId}...`);
   const output = await currentProcessor.convert(currentConverterId);
   currentConvertedText = output;
-  document.getElementById('outputDisplay').innerText = output;  // FULL output, no truncation
+  document.getElementById('outputDisplay').innerText = output;
   if (currentConverterId === 'binary') {
-    currentRawBinary = new Uint8Array(output.match(/.{8}/g).map(b=>parseInt(b,2)));
+    const bits = output;
+    const bytes = new Uint8Array(bits.match(/.{8}/g).map(b => parseInt(b, 2)));
+    currentRawBinary = bytes;
   }
   logger.log(`Conversion done. Length: ${output.length} chars`);
 });
 
-// REVERT ANY FORMAT TO IMAGE
+// Revert any format to image
 document.getElementById('revertToImageBtn').addEventListener('click', () => {
   const inputData = document.getElementById('revertInputText').value.trim();
   const format = document.getElementById('revertFormatSelect').value;
@@ -67,7 +69,6 @@ document.getElementById('revertToImageBtn').addEventListener('click', () => {
   try {
     const bytes = Reconstructor.parseToBytes(inputData, format, width, height);
     const canvas = Reconstructor.reconstructImage(bytes, width, height);
-    const ctx = canvas.getContext('2d');
     const revertCanvas = document.getElementById('revertCanvas');
     revertCanvas.width = width;
     revertCanvas.height = height;
@@ -101,4 +102,4 @@ document.getElementById('registerEmailBtn').addEventListener('click', () => {
   logger.log(`Email registered: ${email}`);
 });
 
-logger.log('🚀 Universal Image Forge Pro ready | Revert any format to image');
+logger.log('🚀 Universal Image Forge Pro ready | Revert any format to image | All groups expanded');

@@ -44,10 +44,13 @@ export class MenuBuilder {
         itemsDiv.classList.toggle('collapsed');
         header.classList.toggle('collapsed');
       });
+      
+      // ✅ Ensure all groups start expanded (no 'collapsed' class)
+      itemsDiv.classList.remove('collapsed');
+      header.classList.remove('collapsed');
+      
       menuDiv.appendChild(groupDiv);
     });
-    const firstHeader = document.querySelector('.group-header');
-    if (firstHeader) firstHeader.click();
   }
 
   getActiveId() { return this.currentActive; }

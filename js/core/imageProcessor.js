@@ -3,7 +3,7 @@ export class ImageProcessor {
     this.imageData = null;
     this.width = 0;
     this.height = 0;
-    this.rawBytes = null;
+    //this.rawBytes = null;
   }
 
   loadFromImage(imgElement) {
@@ -15,7 +15,7 @@ export class ImageProcessor {
     this.imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     this.width = canvas.width;
     this.height = canvas.height;
-    this.rawBytes = new Uint8Array(this.imageData.data);
+    //this.rawBytes = new Uint8Array(this.imageData.data);
     return true;
   }
 
@@ -29,12 +29,12 @@ export class ImageProcessor {
     return gray;
   }
 
-  getRGBArray() { return this.rawBytes; }
+  //getRGBArray() { return this.rawBytes; }
 
   // Core conversion dispatcher
   async convert(typeId) {
     const grayArr = this.getGrayscaleArray();
-    const rgbArr = this.getRGBArray();
+    //const rgbArr = this.getRGBArray();
     const w = this.width, h = this.height;
 
     switch(typeId) {
@@ -69,14 +69,26 @@ export class ImageProcessor {
     }
   }
 
-  _buildMatrix(data, type) {
+  _buildRGBMatrix() {
+    const pixels = this.imageData.data;
     const matrix = [];
     for (let y=0; y<this.height; y++) {
       const row = [];
       for (let x=0; x<this.width; x++) {
-        const idx = y*this.width + x;
-        if (type === 'rgb') row.push([data[idx*4], data[idx*4+1], data[idx*4+2]]);
-        else row.push(data[idx]);
+        const idx = (y*this.width + x)*4;
+        row.push([pixels[idx], pixels[idx+1], pixels[idx+2]]);
+      }
+      matrix.push(row);
+    }
+    return matrix;
+  }
+
+  _buildGrayscaleMatrix(gray) {
+    const matrix = [];
+    for (let y=0; y<this.height; y++) {
+      const row = [];
+      for (let x=0; x<this.width; x++) {
+        row.push(gray[y*this.width + x]);
       }
       matrix.push(row);
     }
@@ -118,7 +130,7 @@ export class ImageProcessor {
     return canvas.toDataURL().split(',')[1];
   }
 
-  async toDataURL() {
+  async _toDataURL() {
     const canvas = document.createElement('canvas');
     canvas.width = this.width; canvas.height = this.height;
     canvas.getContext('2d').putImageData(this.imageData, 0, 0);
