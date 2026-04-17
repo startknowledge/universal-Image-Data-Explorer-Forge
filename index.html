@@ -154,8 +154,8 @@
         <div class="meta-info" id="metadataPanel"></div>
       </div>
     </div>
-
-    <!-- Binary Reconstructor Card -->
+    
+    <!-- Binary Reconstructor Card 
     <div class="glass-card reconstructor-card">
       <h4><i class="fas fa-sync-alt"></i> 🔁 BINARY → IMAGE RECONSTRUCTOR</h4>
       <p>Paste binary string (0/1) from output above, specify dimensions:</p>
@@ -166,6 +166,29 @@
         <button id="reconstructImageBtn" class="btn-grad"><i class="fas fa-images"></i> Rebuild Image</button>
       </div>
       <canvas id="reconCanvas" width="300" height="200"></canvas>
+    </div>
+ -->
+
+    <!-- REVERT CARD: Any format → Image -->
+    <div class="glass-card reconstructor-card">
+      <h4><i class="fas fa-sync-alt"></i> 🔁 REVERT ANY FORMAT → IMAGE</h4>
+      <p>Paste data (binary, hex, base64, array, etc.) and select its format:</p>
+      <textarea id="revertInputText" rows="2" placeholder="Paste your converted data here..."></textarea>
+      <div class="recon-controls">
+        <select id="revertFormatSelect">
+          <option value="binary">Binary (0/1 string)</option>
+          <option value="hex">Hexadecimal (space separated)</option>
+          <option value="base64">Base64</option>
+          <option value="byteArray">Byte Array [0,1,2]</option>
+          <option value="cArray">C Array {0,1,2}</option>
+          <option value="pythonBytes">Python bytes([0,1,2])</option>
+          <option value="jsonArray">JSON Array</option>
+        </select>
+        <input type="number" id="revertWidth" placeholder="Width (required)">
+        <input type="number" id="revertHeight" placeholder="Height (required)">
+        <button id="revertToImageBtn" class="btn-grad"><i class="fas fa-images"></i> Revert → Image</button>
+      </div>
+      <canvas id="revertCanvas" width="300" height="200" style="margin-top:1rem; border-radius:1rem; background:#111;"></canvas>
     </div>
 
     <!-- ========== FEATURES GRID (SEO Automation Suite) ========== -->

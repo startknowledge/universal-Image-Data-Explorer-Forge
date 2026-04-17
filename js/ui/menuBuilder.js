@@ -46,9 +46,8 @@ export class MenuBuilder {
       });
       menuDiv.appendChild(groupDiv);
     });
-    // Initially expand first group
-    const firstGroup = document.querySelector('.group-header');
-    if (firstGroup) firstGroup.click();
+    const firstHeader = document.querySelector('.group-header');
+    if (firstHeader) firstHeader.click();
   }
 
   getActiveId() { return this.currentActive; }

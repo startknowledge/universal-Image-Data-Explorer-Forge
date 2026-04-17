@@ -51,6 +51,8 @@ export class ImageProcessor {
       case 'base32': return btoa(String.fromCharCode(...grayArr)).replace(/=/g,'').toLowerCase(); // simplified
       case 'base85': return btoa(String.fromCharCode(...grayArr)).substring(0,50)+'...'; 
       case 'dataURL': return (await this.toDataURL());
+      case 'asciiText': return String.fromCharCode(...grayArr.slice(0,1000));
+      case 'jsonData': return JSON.stringify({ width: w, height: h, grayscale: Array.from(grayArr) });
       case 'rgbMatrix': return JSON.stringify(this._buildMatrix(rgbArr, 'rgb'));
       case 'grayscaleMatrix': return JSON.stringify(this._buildMatrix(grayArr, 'gray'));
       case 'cArray': return `unsigned char img[${grayArr.length}] = { ${grayArr.join(', ')} };`;
@@ -62,7 +64,8 @@ export class ImageProcessor {
       case 'sha256': return await this._hash('SHA-256', grayArr);
       case 'crc32': return this._crc32(grayArr).toString(16);
       case 'csvPixel': return grayArr.map((v,i) => `${i%w},${Math.floor(i/w)},${v}`).join('\n');
-      default: return `[${grayArr.slice(0,100).join(',')}...] (${grayArr.length} values)`;
+      case 'numpyArray': return `np.array([${grayArr.join(',')}]).reshape(${h},${w})`;
+      default: return `[${grayArr.join(',')}]`;  // FULL array, no truncation
     }
   }
 
@@ -106,6 +109,13 @@ export class ImageProcessor {
       for (let bit=0; bit<8; bit++) crc = (crc>>>1) ^ ((crc&1) * 0xEDB88320);
     }
     return (crc ^ 0xFFFFFFFF) >>> 0;
+  }
+
+  async _toBase64() {
+    const canvas = document.createElement('canvas');
+    canvas.width = this.width; canvas.height = this.height;
+    canvas.getContext('2d').putImageData(this.imageData, 0, 0);
+    return canvas.toDataURL().split(',')[1];
   }
 
   async toDataURL() {
