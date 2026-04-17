@@ -3,555 +3,244 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
-  <meta name="description" content="Universal Image Data Explorer Forge - Convert any image to binary, hex, decimal, RGB matrix, programming arrays & back. Ultra-advanced developer tool with binary-to-image reconstruction.">
-  <meta name="keywords" content="image to binary, binary to image, hex editor, pixel analyzer, image converter, data explorer, cyberchef alternative">
-  <meta name="author" content="Image Forge Labs">
+  <meta name="description" content="Universal Image Data Explorer Forge + SEO Automation Suite. Convert any image to 60+ formats (binary, hex, C arrays, Python, AI) and automate SEO with money pages, backlinks, multi‑language blogs.">
+  <meta name="keywords" content="image to binary, binary to image, hex editor, pixel analyzer, programmatic SEO, auto backlinks, AI content, multi-language SEO">
+  <meta name="author" content="ClientKnowledge & Image Forge Labs">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Universal Image Data Explorer Forge">
-  <meta property="og:description" content="Convert images into 60+ data formats: binary, hex, C arrays, Python bytes, RGB matrix, and reconstruct images from binary.">
+  <meta property="og:title" content="Universal Image Data Explorer Forge | SEO Automation Suite">
+  <meta property="og:description" content="60+ image converters + full‑stack SEO automation (money pages, backlinks, indexing API, 5 languages).">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <title>⚡ Image Forge | Binary ⇄ Image Converter | Hex & Pixel Lab</title>
+  <meta name="google-site-verification" content="BrJBFG_dXuLu6IL4QCmfRkh6cBT1_Qkd36D2U0jhs9Y" />
+  <meta name="theme-color" content="#0d6efd">
+  <meta http-equiv="content-language" content="en-IN">
+  <meta name="geo.region" content="IN">
+  
+  <title>🔮 Universal Image Data Explorer Forge| 60+ Converters & Auto Growth</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231e6f5c'%3E%3Cpath d='M4 5h16v2H4V5zm2 4h12v2H6V9zm14 4H4v2h16v-2zm-2 4H6v2h12v-2z'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at 10% 30%, #f8fafc, #eef2f9);
-      color: #0a2540;
-      line-height: 1.5;
-      scroll-behavior: smooth;
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Google Tag Manager + Analytics + Ads (kept from SEO tool) -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K435LPQQ');</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y97JEBHZLV"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y97JEBHZLV');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2162324894765763" crossorigin="anonymous"></script>
+  
+  <!-- JSON‑LD Schema (Organization + Website) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.startknowledge.in/#organization",
+          "name": "ClientKnowledge",
+          "url": "https://www.startknowledge.in/",
+          "logo": "https://www.startknowledge.in/assets/images/logo.png",
+          "description": "ClientKnowledge provides smart digital solutions to help businesses grow, attract customers, and increase revenue.",
+          "sameAs": ["https://www.facebook.com/","https://www.twitter.com/","https://www.linkedin.com/"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.startknowledge.in/#website",
+          "url": "https://www.startknowledge.in/",
+          "name": "ClientKnowledge",
+          "publisher": { "@id": "https://www.startknowledge.in/#organization" }
+        }
+      ]
     }
-    /* Glassmorphism + gradient core */
-    .glass-card {
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(12px);
-      border-radius: 2rem;
-      border: 1px solid rgba(255,255,255,0.5);
-      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
-    }
-    .container-main { max-width: 1600px; margin: 0 auto; padding: 1.2rem; }
-    /* Layout: left sidebar, center canvas, right logs */
-    .forge-dashboard {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-    .sidebar-left {
-      flex: 1.2;
-      min-width: 220px;
-      background: rgba(10, 37, 64, 0.03);
-      border-radius: 2rem;
-      padding: 1rem;
-      backdrop-filter: blur(4px);
-    }
-    .center-panel {
-      flex: 3;
-      min-width: 300px;
-    }
-    .sidebar-right {
-      flex: 1.2;
-      min-width: 260px;
-      background: rgba(255,255,245,0.5);
-      border-radius: 2rem;
-      padding: 1rem;
-      backdrop-filter: blur(4px);
-    }
-    .conv-menu {
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      max-height: 70vh;
-      overflow-y: auto;
-      padding-right: 0.5rem;
-    }
-    .conv-btn {
-      background: white;
-      border: none;
-      padding: 0.75rem 1rem;
-      border-radius: 2rem;
-      font-weight: 600;
-      text-align: left;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      transition: 0.2s;
-      cursor: pointer;
-      color: #1e4663;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-    }
-    .conv-btn i { width: 1.6rem; color: #1e6f5c; }
-    .conv-btn.active, .conv-btn:hover {
-      background: linear-gradient(95deg, #1e6f5c, #2c9b82);
-      color: white;
-      box-shadow: 0 8px 18px -6px #1e6f5c60;
-    }
-    .conv-btn.active i, .conv-btn:hover i { color: white; }
-    .upload-zone {
-      border: 2px dashed #b9d2e8;
-      border-radius: 2rem;
-      background: #ffffffcc;
-      text-align: center;
-      padding: 2rem 1rem;
-      transition: 0.2s;
-      cursor: pointer;
-    }
-    .upload-zone.drag-over { background: #d9f0ec; border-color: #1e6f5c; }
-    .preview-img { max-width: 100%; max-height: 280px; border-radius: 1.5rem; margin: 1rem 0; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-    .action-buttons { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0; justify-content: center; }
-    .btn-grad {
-      background: linear-gradient(95deg, #134b5e, #1e6f5c);
-      border: none;
-      padding: 0.8rem 2rem;
-      border-radius: 3rem;
-      font-weight: 700;
-      color: white;
-      transition: all 0.2s ease;
-      cursor: pointer;
-      box-shadow: 0 5px 12px rgba(0,0,0,0.1);
-    }
-    .btn-grad:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 15px 25px -10px #1e6f5c; }
-    .output-area {
-      background: #0a1c2c;
-      color: #b3f0e0;
-      font-family: 'Monaco', monospace;
-      font-size: 0.8rem;
-      padding: 1rem;
-      border-radius: 1.5rem;
-      overflow-x: auto;
-      max-height: 280px;
-      white-space: pre-wrap;
-      word-break: break-all;
-    }
-    .log-box {
-      background: #eef3fa;
-      border-radius: 1.2rem;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      font-size: 0.8rem;
-      font-family: monospace;
-    }
-    .email-reg { background: white; border-radius: 1.5rem; padding: 1rem; margin: 1rem 0; }
-    .footer-custom { background: #0f2b3d; color: #cbdde9; margin-top: 2rem; border-radius: 2rem 2rem 0 0; }
-    @media (max-width: 900px) { .forge-dashboard { flex-direction: column; } }
-    .slide-menu-h {
-      display: flex;
-      overflow-x: auto;
-      gap: 0.8rem;
-      padding: 0.5rem 0;
-      margin-bottom: 1rem;
-      scrollbar-width: thin;
-    }
-    .badge-info { background: #1e6f5c20; border-radius: 2rem; padding: 0.2rem 0.8rem; font-size: 0.7rem; }
-    .download-select { background: white; border-radius: 2rem; padding: 0.5rem; width: 100%; margin-top: 0.5rem; }
-  </style>
+  </script>
 </head>
 <body>
-<div class="container-main">
-  <header style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-    <div><h1 style="font-weight: 800; background: linear-gradient(135deg,#0f2b3d,#2a9d8f); -webkit-background-clip:text; background-clip:text; color:transparent;">🔮 Universal Image Data Explorer Forge</h1><span>Binary ⇄ Hex ⇄ Pixel ⇄ Code | 60+ formats</span></div>
-    <div class="badge-info"><i class="fas fa-microchip"></i> ultra-advanced | drag & drop</div>
-  </header>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K435LPQQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <div class="forge-dashboard">
-    <!-- LEFT SIDE MENU (conversion types) -->
-    <div class="sidebar-left glass-card">
-      <h4><i class="fas fa-cogs"></i> Conversion Modes</h4>
-      <div class="slide-menu-h" style="display: none;"></div> <!-- hidden extra, but we use vertical -->
-      <div class="conv-menu" id="convMenu">
-        <!-- dynamic list from js -->
+  <div class="container-main">
+    <!-- ========== HEADER (merged: logo + nav + lang switcher) ========== -->
+    <header class="main-header">
+      <div class="logo-area">
+        <h1>🔮 Universal Image Data Explorer Forge <span class="badge-pro">Pro</span></h1>
+        <p>60+ Converters | Binary ⇄ Hex ⇄ Pixel ⇄ Code | AI Ready</p>
       </div>
-      <div class="mt-3"><i class="fas fa-info-circle"></i> Click convert after selection</div>
-    </div>
-
-    <!-- CENTER PANEL: upload & preview & convert -->
-    <div class="center-panel glass-card" style="padding: 1.5rem;">
-      <div class="upload-zone" id="dropZone">
-        <i class="fas fa-cloud-upload-alt fa-3x" style="color:#1e6f5c;"></i>
-        <p><strong>Drag & Drop or Click</strong><br>PNG, JPEG, WEBP, BMP, GIF</p>
-        <input type="file" id="fileInput" accept="image/png,image/jpeg,image/webp,image/bmp,image/gif" style="display:none">
-        <button class="btn-grad" style="margin-top: 10px; padding: 6px 20px;" onclick="document.getElementById('fileInput').click()"><i class="fas fa-folder-open"></i> Browse</button>
-      </div>
-      <div id="imagePreviewArea" style="text-align:center;">
-        <img id="previewImg" class="preview-img" src="https://placehold.co/600x400/eef2f8/1e6f5c?text=No+Image" alt="preview">
-      </div>
-      <div class="action-buttons">
-        <button id="convertBtn" class="btn-grad"><i class="fas fa-exchange-alt"></i> CONVERT →</button>
-        <button id="binaryToImageBtn" class="btn-grad" style="background: linear-gradient(95deg,#2c3e50,#1e4663);"><i class="fas fa-undo-alt"></i> Binary → Image</button>
-      </div>
-      <div>
-        <h5><i class="fas fa-code"></i> Converted Output</h5>
-        <div id="outputDisplay" class="output-area">Ready. Upload image & pick conversion.</div>
-        <div style="margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap;">
-          <button id="copyOutputBtn" class="btn-grad" style="background:#2c3e50;"><i class="fas fa-copy"></i> Copy</button>
-          <select id="downloadFormatSelect" class="download-select">
-            <option value="txt">Plain Text (.txt)</option>
-            <option value="c">C Array (.c)</option>
-            <option value="cpp">C++ Array (.cpp)</option>
-            <option value="python">Python Bytes (.py)</option>
-            <option value="java">Java Byte Array (.java)</option>
-            <option value="js">JavaScript Buffer (.js)</option>
-            <option value="bin">Raw Binary (.bin)</option>
-          </select>
-          <button id="downloadBtn" class="btn-grad" style="background:#134b5e;"><i class="fas fa-download"></i> Download</button>
+      <div class="header-right">
+        <ul class="nav-links">
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+        <div class="lang-switcher" id="langSwitcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="es">ES</button>
+          <button class="lang-btn" data-lang="de">DE</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="hi">हिंदी</button>
         </div>
       </div>
+    </header>
+
+    <!-- ========== HERO SECTION (SEO Automation) ========== -->
+    <section class="hero">
+      <div class="hero-content">
+        <h2 id="heroTitle">Scale SEO with zero‑touch automation</h2>
+        <p id="heroDesc">Auto money pages • AI backlinks • Indexing API • Multi‑language blogs (EN, ES, DE, FR, HI) • Real‑time analytics • Semantic E‑E‑A‑T signals</p>
+        <div class="trend-badge">
+          <span><i class="fas fa-chart-line"></i> Google Trend: Programmatic SEO +420%</span>
+          <span><i class="fas fa-robot"></i> AI Content Clusters</span>
+          <span><i class="fas fa-globe"></i> E‑E‑A‑T ready</span>
+          <span><i class="fas fa-link"></i> Auto Backlink Engine</span>
+          <span><i class="fas fa-language"></i> 5+ Languages</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MAIN CONVERTER DASHBOARD (Image Tool) ========== -->
+    <div class="forge-dashboard">
+      <!-- LEFT: Grouped Menu -->
+      <div class="sidebar-left glass-card" id="menuSidebar">
+        <h4><i class="fas fa-cubes"></i> Conversion Groups</h4>
+        <div id="groupMenuContainer"></div>
+      </div>
+
+      <!-- CENTER: Upload & Convert -->
+      <div class="center-panel glass-card">
+        <div class="upload-zone" id="dropZone">
+          <i class="fas fa-cloud-upload-alt fa-3x"></i>
+          <p><strong>Drag & Drop or Click</strong><br>PNG, JPEG, WEBP, BMP, GIF</p>
+          <input type="file" id="fileInput" accept="image/*" style="display:none">
+          <button class="btn-grad" onclick="document.getElementById('fileInput').click()"><i class="fas fa-folder-open"></i> Browse</button>
+        </div>
+        <div id="imagePreviewArea"><img id="previewImg" class="preview-img" src="https://placehold.co/600x400/eef2f8/1e6f5c?text=Drop+Image" alt="preview"></div>
+        
+        <div class="action-buttons">
+          <button id="convertBtn" class="btn-grad"><i class="fas fa-exchange-alt"></i> CONVERT →</button>
+          <button id="binaryToImageBtn" class="btn-grad secondary"><i class="fas fa-undo-alt"></i> Binary → Image</button>
+        </div>
+
+        <div>
+          <h5><i class="fas fa-code"></i> Converted Output</h5>
+          <div id="outputDisplay" class="output-area">Ready. Select a conversion format & upload image.</div>
+          <div class="download-bar">
+            <button id="copyOutputBtn" class="btn-small"><i class="fas fa-copy"></i> Copy</button>
+            <select id="downloadFormatSelect">
+              <option value="txt">Plain Text (.txt)</option>
+              <option value="c">C Array (.c)</option>
+              <option value="cpp">C++ Array (.cpp)</option>
+              <option value="python">Python Bytes (.py)</option>
+              <option value="java">Java Byte Array (.java)</option>
+              <option value="js">JavaScript Buffer (.js)</option>
+              <option value="bin">Raw Binary (.bin)</option>
+            </select>
+            <button id="downloadBtn" class="btn-small"><i class="fas fa-download"></i> Download</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Logs + Email Unlock + Ads -->
+      <div class="sidebar-right glass-card">
+        <div><i class="fas fa-chart-line"></i> <strong>System Logs</strong></div>
+        <div id="logPanel" class="log-box">📁 Ready. Load image to begin.</div>
+        <div><i class="fas fa-envelope"></i> <strong>Unlock Downloads</strong></div>
+        <div class="email-reg">
+          <input type="email" id="userEmail" placeholder="your@email.com">
+          <button id="registerEmailBtn">🔓 Register & Unlock</button>
+          <div id="emailStatus"></div>
+        </div>
+        <div id="adContainer" class="ad-space"></div>
+        <div class="meta-info" id="metadataPanel"></div>
+      </div>
     </div>
 
-    <!-- RIGHT SIDEBAR: logs + email gate + ads -->
-    <div class="sidebar-right glass-card">
-      <div><i class="fas fa-chart-line"></i> <strong>System Logs</strong></div>
-      <div id="logPanel" class="log-box">📁 Ready. Upload image to begin.</div>
-      <div><i class="fas fa-envelope"></i> <strong>Email unlock (one-time)</strong></div>
-      <div class="email-reg" id="emailSection">
-        <input type="email" id="userEmail" placeholder="your@email.com" style="width:100%; padding:10px; border-radius:2rem; border:1px solid #ccc;">
-        <button id="registerEmailBtn" style="margin-top:8px; width:100%; background:#1e6f5c; color:white; border:none; border-radius:2rem; padding:8px;">🔓 Register & Unlock Downloads</button>
-        <div id="emailStatus" style="font-size:12px; margin-top:5px;"></div>
+    <!-- Binary Reconstructor Card -->
+    <div class="glass-card reconstructor-card">
+      <h4><i class="fas fa-sync-alt"></i> 🔁 BINARY → IMAGE RECONSTRUCTOR</h4>
+      <p>Paste binary string (0/1) from output above, specify dimensions:</p>
+      <textarea id="binaryInputText" rows="2" placeholder="Paste binary bits here..."></textarea>
+      <div class="recon-controls">
+        <input type="number" id="reconWidth" placeholder="Width">
+        <input type="number" id="reconHeight" placeholder="Height">
+        <button id="reconstructImageBtn" class="btn-grad"><i class="fas fa-images"></i> Rebuild Image</button>
       </div>
-      <!-- Ad slots (AdSense + Propeller + Adsterra sample) -->
-      <div style="margin-top: 1rem; text-align:center; font-size:12px;">
-        <div id="adSenseSlot1" style="min-height:90px;">🔹 Advertisement 🔹</div>
-        <div id="propellerAd"></div>
-        <div id="adsterraAd"></div>
-        <div id="medianetAd"></div>
-      </div>
-      <div class="mt-2"><i class="fas fa-chart-simple"></i> Binary stats & metadata will appear here.</div>
+      <canvas id="reconCanvas" width="300" height="200"></canvas>
     </div>
+
+    <!-- ========== FEATURES GRID (SEO Automation Suite) ========== -->
+    <div class="features-section">
+      <h2 class="section-title" id="featuresTitle">⚙️ Full‑stack SEO automation suite</h2>
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon"><i class="fas fa-dollar-sign"></i></div><h3>Auto Money Pages</h3><p>Affiliate links & product feeds auto-generated, optimized for buyer intent keywords.</p></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fas fa-share-alt"></i></div><h3>Auto Backlink System</h3><p>Medium, Reddit, Web 2.0 syndication — contextual backlinks at scale.</p></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fas fa-chart-simple"></i></div><h3>Programmatic SEO</h3><p>10k+ pages dynamically generated from structured data & search trends.</p></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fab fa-google"></i></div><h3>Google Indexing API</h3><p>Instant URL submission & recrawl signals for fresh content.</p></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fas fa-brain"></i></div><h3>Semantic SEO & E‑E‑A‑T</h3><p>Entity linking, author schema, trust signals & expertise markers.</p></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fas fa-language"></i></div><h3>Multi‑Language Blogs</h3><p>Auto-translated hreflang clusters: EN, ES, DE, FR, Hindi (HI) — regional scaling.</p></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fas fa-chart-pie"></i></div><h3>Analytics Dashboard</h3><p>Real‑time performance, crawl stats, keyword rankings.</p></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fas fa-sync-alt"></i></div><h3>Auto Refresh Content</h3><p>Smart update of old posts + date freshness signals.</p></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fab fa-twitter"></i></div><h3>Social Auto‑Posting</h3><p>Scheduled posting to X, LinkedIn, Facebook via webhooks.</p></div>
+      </div>
+    </div>
+
+    <!-- ========== FOOTER (Quick Links + Address) ========== -->
+    <footer class="footer-custom">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h5>ClientKnowledge</h5>
+          <p>Smart Solutions. Real Growth.</p>
+          <div class="social-icons">
+            <i class="fab fa-facebook"></i> <i class="fab fa-twitter"></i> <i class="fab fa-linkedin"></i> <i class="fab fa-instagram"></i>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms and Conditions</a></li>
+            <li><a href="disclaimer.html">Disclaimers</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="documentation.html">documentation</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+            <li><a href="changelog.html">Change Log</a></li>
+          </ul>
+        </div>
+        <div class="footer-address">
+          <h5>Address</h5>
+          <address>
+            Heran, Halwara <br>
+            9 Wing Air Force Road.<br>
+            Sudhar, Ludhiana<br>
+            Punjab, India-141107
+          </address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Universal Image Data Explorer Forge | Modular 60+ Converter Engine + SEO Suite | ClientKnowledge</p>
+      </div>
+    </footer>
   </div>
 
-  <!-- Binary to Image Reconstruction extra card -->
-  <div class="glass-card" style="margin-top: 2rem; padding: 1.5rem;">
-    <h4><i class="fas fa-sync-alt"></i> 🔁 BINARY → IMAGE RECONSTRUCTOR</h4>
-    <p>Paste binary string (0/1) from output above, specify width/height or auto-detect from saved metadata.</p>
-    <textarea id="binaryInputText" rows="3" style="width:100%; border-radius:1rem; padding:1rem;" placeholder="Paste binary bits here..."></textarea>
-    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-      <input type="number" id="reconWidth" placeholder="Width" style="width:100px; padding:6px; border-radius:1rem;">
-      <input type="number" id="reconHeight" placeholder="Height" style="width:100px; padding:6px; border-radius:1rem;">
-      <button id="reconstructImageBtn" class="btn-grad"><i class="fas fa-images"></i> Rebuild Image</button>
-    </div>
-    <canvas id="reconCanvas" style="max-width:100%; margin-top:1rem; border-radius:1rem; background:#ddd;" width="200" height="200"></canvas>
-  </div>
-
-  <footer class="footer-custom pt-4 pb-3 mt-4" style="padding: 2rem 1rem;">
-    <div class="row" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-      <div class="col-md-4"><h5 style="color:#fff">ClientKnowledge</h5><p style="font-size:0.9rem;">Ultra Image Forge • Binary to pixel • Forensic data lab</p><div><i class="fab fa-facebook"></i> <i class="fab fa-twitter"></i> <i class="fab fa-linkedin"></i> <i class="fab fa-instagram"></i></div><br><p>© ClientKnowledge 2026</p></div>
-      <div><h5>Quick Links</h5><ul style="list-style:none"><li>Services</li><li>Portfolio</li><li>Privacy</li><li>Terms</li><li>Disclaimer</li></ul></div>
-      <div><h5>Address</h5><address>Heran, Halwara, 9 Wing AF Road, Ludhiana, Punjab-141107</address></div>
-    </div>
-  </footer>
-</div>
-
-<script>
-  // ---------- GLOBAL VARIABLES ----------
-  let currentImageData = null;   // ImageData object
-  let currentWidth = 0, currentHeight = 0;
-  let currentConvertedText = "";
-  let currentRawBinaryBytes = null; // store binary bytes for raw download
-  let registeredEmails = JSON.parse(localStorage.getItem("forge_reg_emails") || "[]");
-  let isDownloadUnlocked = false;
-  let currentConversionType = "binary";
-
-  // ----- Conversion definitions (left menu)
-  const conversionList = [
-    { id: "binary", name: "🔢 Binary (bits)", desc: "8-bit grayscale bits" },
-    { id: "hex", name: "🧬 Hexadecimal", desc: "Hex dump" },
-    { id: "decimal", name: "📊 Decimal Array", desc: "Comma separated" },
-    { id: "base64", name: "📁 Base64", desc: "Image base64 string" },
-    { id: "rgbmatrix", name: "🎨 RGB Matrix", desc: "Nested RGB arrays" },
-    { id: "grayarray", name: "⚫ Grayscale Array", desc: "0-255 values" },
-    { id: "c_array", name: "⚙️ C Array (uint8)", desc: "C style" },
-    { id: "python_bytes", name: "🐍 Python Bytes", desc: "bytes literal" },
-    { id: "java_byte", name: "☕ Java byte[]", desc: "Java array" },
-    { id: "js_buffer", name: "📜 JS Buffer", desc: "Buffer.from" },
-    { id: "ascii_art", name: "🖼️ ASCII Art", desc: "Pixel art" }
-  ];
-
-  // Populate left menu
-  const menuContainer = document.getElementById("convMenu");
-  conversionList.forEach(conv => {
-    const btn = document.createElement("button");
-    btn.className = "conv-btn";
-    btn.innerHTML = `<i class="fas fa-code"></i> ${conv.name}`;
-    btn.dataset.type = conv.id;
-    btn.addEventListener("click", () => {
-      document.querySelectorAll(".conv-btn").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      currentConversionType = conv.id;
-      addLog(`✔ Conversion mode: ${conv.name}`);
+  <!-- MODULAR JS (ES Modules) – same as before -->
+  <script type="module" src="js/main.js"></script>
+  
+  <!-- Simple language switcher demo (optional) -->
+  <script>
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        // You can extend this with real translations
+        console.log('Language switched to', btn.dataset.lang);
+      });
     });
-    menuContainer.appendChild(btn);
-  });
-  // set default active
-  document.querySelector(".conv-btn").classList.add("active");
+  </script>
 
-  // helpers
-  function addLog(msg) {
-    const logDiv = document.getElementById("logPanel");
-    const time = new Date().toLocaleTimeString();
-    logDiv.innerHTML = `<i class="far fa-clock"></i> [${time}] ${msg}<br>` + logDiv.innerHTML;
-    if(logDiv.children.length > 12) logDiv.lastElementChild?.remove();
-  }
-
-  // Image to Data conversion engine
-  async function convertImageToData(type, imgData, width, height) {
-    const totalPixels = width * height;
-    const pixels = imgData.data; // RGBA
-    if(type === "binary") {
-      let bits = "";
-      for(let i=0; i<totalPixels; i++) {
-        const r = pixels[i*4], g = pixels[i*4+1], b = pixels[i*4+2];
-        const gray = Math.floor(0.299*r + 0.587*g + 0.114*b);
-        bits += gray.toString(2).padStart(8,'0');
-      }
-      currentRawBinaryBytes = new Uint8Array(bits.match(/.{8}/g).map(byte=>parseInt(byte,2)));
-      return bits;
-    } 
-    else if(type === "hex") {
-      let hexStr = "";
-      for(let i=0; i<totalPixels; i++) {
-        const gray = Math.floor(0.299*pixels[i*4] + 0.587*pixels[i*4+1] + 0.114*pixels[i*4+2]);
-        hexStr += gray.toString(16).padStart(2,'0') + " ";
-      }
-      return hexStr.trim();
-    }
-    else if(type === "decimal") {
-      let dec = [];
-      for(let i=0; i<totalPixels; i++) {
-        const gray = Math.floor(0.299*pixels[i*4] + 0.587*pixels[i*4+1] + 0.114*pixels[i*4+2]);
-        dec.push(gray);
-      }
-      return dec.join(", ");
-    }
-    else if(type === "base64") {
-      const canvas = document.createElement('canvas');
-      canvas.width = width; canvas.height = height;
-      const ctx = canvas.getContext('2d');
-      ctx.putImageData(imgData,0,0);
-      return canvas.toDataURL();
-    }
-    else if(type === "rgbmatrix") {
-      let matrix = [];
-      for(let y=0; y<height; y++) {
-        let row = [];
-        for(let x=0; x<width; x++) {
-          const idx = (y*width + x)*4;
-          row.push([pixels[idx], pixels[idx+1], pixels[idx+2]]);
-        }
-        matrix.push(row);
-      }
-      return JSON.stringify(matrix, null, 2);
-    }
-    else if(type === "grayarray") {
-      let grays = [];
-      for(let i=0; i<totalPixels; i++) {
-        const gray = Math.floor(0.299*pixels[i*4] + 0.587*pixels[i*4+1] + 0.114*pixels[i*4+2]);
-        grays.push(gray);
-      }
-      return grays.join(", ");
-    }
-    else if(type === "c_array") {
-      let bytes = [];
-      for(let i=0; i<totalPixels; i++) {
-        const gray = Math.floor(0.299*pixels[i*4] + 0.587*pixels[i*4+1] + 0.114*pixels[i*4+2]);
-        bytes.push(gray);
-      }
-      return `unsigned char image_data[${bytes.length}] = { ${bytes.join(", ")} };`;
-    }
-    else if(type === "python_bytes") {
-      let bytes = [];
-      for(let i=0; i<totalPixels; i++) {
-        const gray = Math.floor(0.299*pixels[i*4] + 0.587*pixels[i*4+1] + 0.114*pixels[i*4+2]);
-        bytes.push(gray);
-      }
-      return `image_bytes = bytes([${bytes.join(", ")}])`;
-    }
-    else if(type === "java_byte") {
-      let bytes = [];
-      for(let i=0; i<totalPixels; i++) {
-        const gray = Math.floor(0.299*pixels[i*4] + 0.587*pixels[i*4+1] + 0.114*pixels[i*4+2]);
-        bytes.push(gray);
-      }
-      return `byte[] imageData = { ${bytes.join(", ")} };`;
-    }
-    else if(type === "js_buffer") {
-      let bytes = [];
-      for(let i=0; i<totalPixels; i++) {
-        const gray = Math.floor(0.299*pixels[i*4] + 0.587*pixels[i*4+1] + 0.114*pixels[i*4+2]);
-        bytes.push(gray);
-      }
-      return `Buffer.from([${bytes.join(", ")}])`;
-    }
-    else if(type === "ascii_art") {
-      let art = "";
-      for(let y=0; y<height; y+=2) {
-        for(let x=0; x<width; x+=1) {
-          const idx = (y*width + x)*4;
-          const bright = (pixels[idx]+pixels[idx+1]+pixels[idx+2])/3;
-          const chars = "@%#*+=-:. ";
-          const charIdx = Math.floor(bright/255 * (chars.length-1));
-          art += chars[charIdx];
-        }
-        art += "\n";
-      }
-      return art;
-    }
-    return "conversion not supported";
-  }
-
-  // load image from file
-  function loadImageFromFile(file) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      const img = new Image();
-      img.onload = function() {
-        const canvas = document.createElement('canvas');
-        canvas.width = img.width; canvas.height = img.height;
-        const ctx = canvas.getContext('2d');
-        ctx.drawImage(img,0,0);
-        currentImageData = ctx.getImageData(0,0, img.width, img.height);
-        currentWidth = img.width; currentHeight = img.height;
-        document.getElementById('previewImg').src = img.src;
-        addLog(`✅ Image loaded: ${img.width}x${img.height} | ${Math.round(file.size/1024)} KB`);
-        document.getElementById('logPanel').innerHTML = `<i class="fas fa-image"></i> Dimensions: ${img.width}x${img.height}<br>File: ${file.name}<br>` + document.getElementById('logPanel').innerHTML;
-      };
-      img.src = e.target.result;
-    };
-    reader.readAsDataURL(file);
-  }
-
-  // handle convert button
-  document.getElementById('convertBtn').addEventListener('click', async () => {
-    if(!currentImageData) { addLog("⚠️ No image loaded. Upload first."); return; }
-    const convType = currentConversionType;
-    addLog(`🔄 Converting to ${convType}...`);
-    const result = await convertImageToData(convType, currentImageData, currentWidth, currentHeight);
-    currentConvertedText = result;
-    document.getElementById('outputDisplay').innerText = result.length > 5000 ? result.substring(0,5000)+"... (truncated)" : result;
-    addLog(`✨ Conversion done. Output length: ${result.length} chars.`);
-    // update binary raw bytes if needed
-    if(convType === "binary") {
-      addLog(`📀 Binary length: ${result.length} bits | ${Math.ceil(result.length/8)} bytes`);
-    }
-  });
-
-  // Download with email unlock
-  function checkEmailUnlock() {
-    if(!isDownloadUnlocked) { addLog("🔒 Please register email to enable downloads."); return false; }
-    return true;
-  }
-  document.getElementById('downloadBtn').addEventListener('click', () => {
-    if(!checkEmailUnlock()) return;
-    if(!currentConvertedText) { addLog("No converted data. Run conversion first."); return; }
-    const format = document.getElementById('downloadFormatSelect').value;
-    let content = currentConvertedText;
-    let ext = "txt";
-    if(format === "c") { ext="c"; content = "// Auto-generated Image Data\n" + content; }
-    else if(format === "cpp") { ext="cpp"; content = "// C++ array\n" + content; }
-    else if(format === "python") { ext="py"; content = "# Python image bytes\n" + content; }
-    else if(format === "java") { ext="java"; content = "public class ImageData { public static void main() { "+content+" } }"; }
-    else if(format === "js") { ext="js"; content = "const imageBuffer = " + content + ";"; }
-    else if(format === "bin") { 
-      if(currentRawBinaryBytes) {
-        const blob = new Blob([currentRawBinaryBytes], {type: "application/octet-stream"});
-        const a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
-        a.download = "image_data.bin";
-        a.click();
-        URL.revokeObjectURL(a.href);
-        addLog("⬇️ Binary raw download ready");
-        return;
-      } else { content = currentConvertedText; ext="bin"; }
-    }
-    const blob = new Blob([content], {type: "text/plain"});
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = `image_export.${ext}`;
-    a.click();
-    URL.revokeObjectURL(a.href);
-    addLog(`✅ Downloaded as ${ext}`);
-  });
-
-  // copy output
-  document.getElementById('copyOutputBtn').addEventListener('click', () => {
-    if(currentConvertedText) { navigator.clipboard.writeText(currentConvertedText); addLog("📋 Copied to clipboard"); }
-    else addLog("Nothing to copy");
-  });
-
-  // Email registration
-  document.getElementById('registerEmailBtn').addEventListener('click', () => {
-    const email = document.getElementById('userEmail').value.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if(!emailRegex.test(email)) { document.getElementById('emailStatus').innerHTML = "❌ Invalid email format"; return; }
-    if(registeredEmails.includes(email)) { document.getElementById('emailStatus').innerHTML = "⚠️ Email already used! One-time use only."; return; }
-    registeredEmails.push(email);
-    localStorage.setItem("forge_reg_emails", JSON.stringify(registeredEmails));
-    isDownloadUnlocked = true;
-    document.getElementById('emailStatus').innerHTML = "✅ Access granted! Downloads unlocked.";
-    addLog(`🔓 Email ${email} registered. Download enabled.`);
-  });
-
-  // Binary to Image reconstruct
-  document.getElementById('reconstructImageBtn').addEventListener('click', () => {
-    let binaryStr = document.getElementById('binaryInputText').value.trim().replace(/\s/g,'');
-    if(!binaryStr) { addLog("❌ No binary input."); return; }
-    let width = parseInt(document.getElementById('reconWidth').value);
-    let height = parseInt(document.getElementById('reconHeight').value);
-    if(isNaN(width) || isNaN(height) || width<=0 || height<=0) {
-      addLog("⚠️ Provide valid width & height for reconstruction.");
-      return;
-    }
-    const expectedBits = width * height * 8;
-    if(binaryStr.length !== expectedBits) {
-      addLog(`⚠️ Binary length mismatch. Expected ${expectedBits} bits, got ${binaryStr.length}.`);
-      return;
-    }
-    const canvas = document.getElementById('reconCanvas');
-    canvas.width = width; canvas.height = height;
-    const ctx = canvas.getContext('2d');
-    const imgData = ctx.createImageData(width, height);
-    for(let i=0; i<width*height; i++) {
-      const byteStr = binaryStr.substr(i*8, 8);
-      const gray = parseInt(byteStr, 2);
-      imgData.data[i*4] = gray;
-      imgData.data[i*4+1] = gray;
-      imgData.data[i*4+2] = gray;
-      imgData.data[i*4+3] = 255;
-    }
-    ctx.putImageData(imgData,0,0);
-    addLog(`🖼️ Reconstructed image ${width}x${height} from binary.`);
-  });
-
-  // Drag & drop
-  const dropZone = document.getElementById('dropZone');
-  const fileInput = document.getElementById('fileInput');
-  dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('drag-over'); });
-  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
-  dropZone.addEventListener('drop', (e) => { e.preventDefault(); dropZone.classList.remove('drag-over'); const file = e.dataTransfer.files[0]; if(file && file.type.startsWith('image/')) loadImageFromFile(file); else addLog("Not an image."); });
-  dropZone.addEventListener('click', () => fileInput.click());
-  fileInput.addEventListener('change', (e) => { if(e.target.files[0]) loadImageFromFile(e.target.files[0]); });
-
-  // Load Ad scripts (async, safe)
-  const adsenseClient = "ca-pub-2162324894765763";
-  const adSlots = ["1966379200", "8024521099", "4441349363", "3958418735"];
-  const adContainer = document.getElementById('adSenseSlot1');
-  if(adContainer) adContainer.innerHTML = `<ins class="adsbygoogle" style="display:block" data-ad-client="${adsenseClient}" data-ad-slot="${adSlots[0]}" data-ad-format="auto"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});<\/script>`;
-  // Propeller/Adsterra placeholders (external)
-  const propellerScript = document.createElement('script');
-  propellerScript.src = "https://upgulpinon.com/1?z=XXXXXX"; // placeholder, but safe
-  propellerScript.async = true;
-  document.getElementById('propellerAd')?.appendChild(propellerScript);
-  // medianet
-  const medianetScript = document.createElement('script');
-  medianetScript.innerHTML = `medianet_versionId = "3121199"; (function(){let s=document.createElement('script');s.src="https://contextual.media.net/dmedianet.js?cid=XXXXXXXX";document.head.appendChild(s)})()`;
-  document.getElementById('medianetAd')?.appendChild(medianetScript);
-
-  addLog("🚀 Universal Image Data Explorer Forge ready. Upload image, choose conversion, register email to download.");
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2162324894765763" crossorigin="anonymous"></script>
 </body>
 </html>
